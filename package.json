@@ -1,0 +1,25 @@
+{
+  "name": "jp-freeze",
+  "version": "0.1.0",
+  "description": "JSON - PHP serializer/unserializer",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maciej-sz/jp-freeze.git"
+  },
+  "keywords": [
+    "json",
+    "php",
+    "serialize",
+    "unserialize"
+  ],
+  "author": "Maciej Sz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maciej-sz/jp-freeze/issues"
+  },
+  "homepage": "https://github.com/maciej-sz/jp-freeze#readme"
+}
