@@ -8,11 +8,6 @@ import {
 
 class JpFreeze {
     
-    public serialize(mValue:any):JpSerializationResult {
-        var process = new JpSerializationProcess();
-        return new JpSerializer().serialize(mValue, process);
-    }
-    
     public unserialize(mValue:any):any {
         var process = new JpUnserializeProcess(mValue);
         return new JpUnserializer().unserialize(mValue.root, process);
