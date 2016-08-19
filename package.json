@@ -4,7 +4,9 @@
   "description": "JSON - PHP serializer/unserializer",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "./node_modules/.bin/mocha ./test/src/all.js",
+    "build": "./node_modules/.bin/browserify ./src/lib/jp-freeze.js -o ./dist/bundle.js",
+    "watch": "./node_modules/.bin/watchify ./src/lib/jp-freeze.js -o ./dist/bundle.js -v"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/maciej-sz/jp-freeze/issues"
   },
-  "homepage": "https://github.com/maciej-sz/jp-freeze#readme"
+  "homepage": "https://github.com/maciej-sz/jp-freeze#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^3.0.2",
+    "v8debug": "^0.1.2",
+    "watchify": "^3.7.0"
+  }
 }

@@ -1,0 +1,15 @@
+{
+  "root": [
+    1234,
+    123.45,
+    "foo",
+    true,
+    false,
+    null
+  ],
+  "objects": [],
+  "meta": {
+    "classes": [],
+    "versions": []
+  }
+}
