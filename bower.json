@@ -1,0 +1,25 @@
+{
+  "name": "jp-freeze",
+  "description": "JSON - PHP serializer/unserializer",
+  "main": "./dist/jp-freeze.js",
+  "authors": [
+    "Maciej Sz"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "json",
+    "php",
+    "serialize",
+    "unserialize"
+  ],
+  "homepage": "https://github.com/maciej-sz/jp-freeze",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "src",
+    "test",
+    "tests",
+    "typings"
+  ]
+}
