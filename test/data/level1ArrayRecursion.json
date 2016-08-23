@@ -1,0 +1,37 @@
+{
+  "root": "##ref##0x0",
+  "objects": {
+    "0x1": {
+      "Author": null,
+      "title": "Post #1",
+      "contents": "foo",
+      "Thread": "##ref##0x0"
+    },
+    "0x2": {
+      "Author": null,
+      "title": "Post #2",
+      "contents": "bar",
+      "Thread": "##ref##0x0"
+    },
+    "0x0": {
+      "Author": null,
+      "title": "Thread title",
+      "contents": "Thread contents",
+      "posts": [
+        "##ref##0x1",
+        "##ref##0x2"
+      ]
+    }
+  },
+  "meta": {
+    "classes": {
+      "0x0": "MaciejSzUtFix\\PjFreeze\\Forum\\Thread",
+      "0x1": "MaciejSzUtFix\\PjFreeze\\Forum\\Post",
+      "0x2": "MaciejSzUtFix\\PjFreeze\\Forum\\Post"
+    },
+    "versions": {
+      "MaciejSzUtFix\\PjFreeze\\Forum\\Thread": 1,
+      "MaciejSzUtFix\\PjFreeze\\Forum\\Post": 1
+    }
+  }
+}

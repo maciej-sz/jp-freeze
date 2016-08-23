@@ -1,0 +1,14 @@
+{
+  "root": [
+    123,
+    [
+      "foo",
+      "bar"
+    ]
+  ],
+  "objects": [],
+  "meta": {
+    "classes": [],
+    "versions": []
+  }
+}
