@@ -22,6 +22,44 @@ var obj = new JpFreeze().unserialize(serialized);
 
 console.log(obj);
 ```
+#### Example: usage in browser
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JpFreeze Test</title>
+</head>
+<body>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/jp-freeze/dist/jp-freeze.js"></script>
+<script type="text/javascript">
+    $.ajax({
+        url: 'https://localhost/get-user.php?id=1234',
+        dataType: 'json',
+        success: function(data) {
+            var user = new JpFreeze().unserialize(data);
+            console.log(user.firstName);
+        }
+    });
+</script>
+
+</body>
+</html>
+```
+
+## Installation
+
+#### NPM
+```
+npm install jp-freeze
+```
+
+#### Bower
+```
+bower install jp-freeze
+```
 
 ## Limitations
 So far only the unserialization is implemented in JavaScript. The serialization is only available through the [corresponding PHP package][link-pj-freeze-github].
