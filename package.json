@@ -2,7 +2,13 @@
   "name": "jp-freeze",
   "version": "0.2.0",
   "description": "JSON - PHP serializer/unserializer",
-  "main": "index.js",
+  "main": "./src/lib/jp-freeze.js",
+  "maintainers": [
+    {
+      "name": "maciej-sz",
+      "email": "maciej.sz@gmail.com"
+    }
+  ],
   "scripts": {
     "test": "./node_modules/.bin/mocha ./test/src/all.js",
     "build": "./node_modules/.bin/browserify ./src/lib/jp-freeze.js -o ./dist/jp-freeze.js",
