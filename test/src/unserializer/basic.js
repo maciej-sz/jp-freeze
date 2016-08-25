@@ -1,9 +1,13 @@
 "use strict";
-var assert = require('assert');
-var expect = require('expect.js');
+var chai = require('chai');
+var assert = chai.assert;
+var expect = chai.expect;
 var fs = require('fs');
 var JpFreeze = require('../../../src/lib/jp-freeze');
 var TestHelper = require('../../helper');
+var UnserializationError = require('../../../src/lib/util/jp-unserializer').UnserializationError;
+
+chai.should();
 
 describe("Basic unserialization", function(){
     var freeze = new JpFreeze();
@@ -52,6 +56,26 @@ describe("Basic unserialization", function(){
 
             expect(freeze.unserialize(serialized)).to.eql(expected);
         })
+    });
+
+    describe("Invalid JSON unserialization", function(){
+
+        it("Should throw an error", function(){
+            expect(function () {
+                freeze.unserialize(123);
+            }).to.throw(UnserializationError)
+        });
+
+    });
+
+    describe("JSON without root unserialization", function(){
+
+        it("Should throw an error", function(){
+            expect(function () {
+                freeze.unserialize({});
+            }).to.throw(UnserializationError);
+        });
+
     });
 
     describe("Class unserialization", function(){

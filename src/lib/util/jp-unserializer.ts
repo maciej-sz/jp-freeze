@@ -1,11 +1,25 @@
 import {Util} from "./util";
 
+export class UnserializationError extends Error {}
+
+class SerializedObjectValidator {
+    public validateThrow(mSerialized:any) {
+        if ( !Util.isObject(mSerialized) ) {
+            throw new UnserializationError("Serialized value must be an object");
+        }
+        if ( undefined === mSerialized.root ) {
+            throw new UnserializationError("Serialized value must have a root");
+        }
+    }
+}
+
 export class JpUnserializeProcess {
 
     private _original:any;
     private unserializedReferences:{ [key: string] : {[key: string] : any} };
 
     constructor(original:any) {
+        new SerializedObjectValidator().validateThrow(original);
         this._original = original;
         this.unserializedReferences = {};
     }

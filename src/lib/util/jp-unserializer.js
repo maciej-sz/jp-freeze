@@ -1,6 +1,33 @@
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var util_1 = require("./util");
+var UnserializationError = (function (_super) {
+    __extends(UnserializationError, _super);
+    function UnserializationError() {
+        _super.apply(this, arguments);
+    }
+    return UnserializationError;
+}(Error));
+exports.UnserializationError = UnserializationError;
+var SerializedObjectValidator = (function () {
+    function SerializedObjectValidator() {
+    }
+    SerializedObjectValidator.prototype.validateThrow = function (mSerialized) {
+        if (!util_1.Util.isObject(mSerialized)) {
+            throw new UnserializationError("Serialized value must be an object");
+        }
+        if (undefined === mSerialized.root) {
+            throw new UnserializationError("Serialized value must have a root");
+        }
+    };
+    return SerializedObjectValidator;
+}());
 var JpUnserializeProcess = (function () {
     function JpUnserializeProcess(original) {
+        new SerializedObjectValidator().validateThrow(original);
         this._original = original;
         this.unserializedReferences = {};
     }
