@@ -1,7 +1,7 @@
 # jp-freeze
 JSON - PHP serailizer/unserializer
 
-[![Latest Version on Packagist][ico-version]][link-npm]
+[![Latest Version on NPM][ico-version]][link-npm]
 [![Build Status][ico-travis]][link-travis]
 ![No dependencies][ico-no-deps]
 [![MIT License][ico-license]][link-license]
